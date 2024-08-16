@@ -21,3 +21,5 @@ class contact extends Model
         'updated_at'
     ];
 }
+
+

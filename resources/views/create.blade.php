@@ -5,6 +5,7 @@
 
 
         <form class="max-w-sm mx-auto" action="{{route('contacts.store')}}" method="post">
+
             @csrf
             <div class="mb-5">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>

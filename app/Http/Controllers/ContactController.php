@@ -61,16 +61,25 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id, contact $contact)
     {
-        //
+        $contact->update($request->all());
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request,string $id, contact $contact)
     {
-        //
+        contact::destroy($id);
+        return redirect(route('contacts.index'));
+
+//        if ($contact->id == $request->id){
+//            $contact->delete();
+//            return redirect(route('contacts.index'));
+//        }else{
+//            abort(403, "Failed");
+//        }
     }
 }

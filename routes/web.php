@@ -17,7 +17,8 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
-Route::post('/contacts', [ContactController::class, 'update'])->name('contacts.update');
+Route::post('/contacts/{cts}', [ContactController::class, 'update'])->name('contacts.update');
+Route::delete('/contacts/{cts}',[ContactController::class, 'destroy'])->name('contacts.destroy');
 
 
 
