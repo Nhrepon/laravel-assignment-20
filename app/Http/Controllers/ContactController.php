@@ -2,27 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contact;
 use Illuminate\Http\Request;
+use App\Models\contact;
 
 class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('index');
+        $contacts = contact::all();
+        return view('index', ['contact'=> $contacts]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request, contact $contact)
+    public function create(Request $request)
     {
-        $contact->create($request->all());
+        //$contact->create($request->all());
 
-        return view('create');
+
     }
 
     /**
@@ -30,7 +31,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = new contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->address = $request->address;
+        $contact->save();
+
+        //return view('create');
+        return redirect(route('contacts.index'));
     }
 
     /**
