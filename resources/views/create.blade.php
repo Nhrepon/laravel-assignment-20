@@ -1,10 +1,10 @@
-
+<x-layout>
     <div class="container">
         <h2 class="text-4xl text-center">Create contacts</h2>
         <hr class="my-3">
 
 
-        <form class="max-w-sm mx-auto" action="{{route('contacts.store')}}" method="post">
+        <form class="max-w-xl mx-auto" action="{{route('contacts.store')}}" method="post">
 
             @csrf
             <div class="mb-5">
@@ -32,3 +32,4 @@
 
     </div>
 
+</x-layout>

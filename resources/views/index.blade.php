@@ -1,13 +1,16 @@
 <x-layout>
-    <div class="container">
-        <h2 class="text-3xl">Contact list</h2>
-        <table class="table-auto">
+    <div class="container mx-auto">
+        <h2 class="text-3xl text-center my-5">Contact list</h2>
+        <hr class="my-5">
+        <table class="table-auto text-center w-full">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
+                <th class="border-2 p-4">Name</th>
+                <th class="border-2 p-4">Email</th>
+                <th class="border-2 p-4">Phone</th>
+                <th class="border-2 p-4">Address</th>
+                <th class="border-2 p-4">Update</th>
+                <th class="border-2 p-4">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -34,9 +37,9 @@
         </table>
 
     </div>
-    <hr class="my-5"/>
-    <div class="container my-5">
-        @include("create")
-    </div>
+{{--    <hr class="my-5"/>--}}
+{{--    <div class="container my-5">--}}
+{{--        @include("create")--}}
+{{--    </div>--}}
 
 </x-layout>
