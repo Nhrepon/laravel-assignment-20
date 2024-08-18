@@ -13,8 +13,26 @@ class ContactController extends Controller
     public function index(Request $request)
     {
         $contacts = contact::all();
+        //$contacts = contact::all()->sortBy("name");
+        
         return view('index', ['contact'=> $contacts]);
     }
+
+    public function orderByName(Request $request){
+        $contacts = contact::orderBy('name', 'asc')->get();
+        return view('index', ['contact'=> $contacts]);
+    } 
+
+
+    public function orderByDate(Request $request){
+        $contacts = $contacts = contact::orderBy('created_at', 'desc')->get();
+        return view('index', ['contact'=> $contacts]);
+    } 
+
+    public function search(Request $request){
+        $contacts = $contacts = contact::where('name', 'like', '%' . $request->search . '%')->get();
+        return view('index', ['contact'=> $contacts]);
+    } 
 
     /**
      * Show the form for creating a new resource.

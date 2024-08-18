@@ -1,18 +1,23 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel Assignment 20</title>
 
     @vite('resources/css/app.css')
+    <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
+
 </head>
+
 <body>
     <div class="container mx-auto">
         <x-top-navigation />
         {{$slot}}
     </div>
 </body>
+
 </html>

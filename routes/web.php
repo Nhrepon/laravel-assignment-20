@@ -15,6 +15,11 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+
+Route::get('/contacts/orderByName', [ContactController::class, 'orderByName'])->name('contacts.orderByName');
+Route::get('/contacts/orderByDate', [ContactController::class, 'orderByDate'])->name('contacts.orderByDate');
+Route::get('/contacts/search', [ContactController::class, 'search'])->name('contacts.search');
+
 Route::get('/contacts/create', function () {
     return view('create');
 });
@@ -26,3 +31,7 @@ Route::delete('/contacts/{cts}',[ContactController::class, 'destroy'])->name('co
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
