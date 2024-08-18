@@ -19,6 +19,7 @@ Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.ind
 Route::get('/contacts/orderByName', [ContactController::class, 'orderByName'])->name('contacts.orderByName');
 Route::get('/contacts/orderByDate', [ContactController::class, 'orderByDate'])->name('contacts.orderByDate');
 Route::get('/contacts/search', [ContactController::class, 'search'])->name('contacts.search');
+Route::get('/contacts/{id}', [ContactController::class, 'viewSingleContact'])->name('contacts.viewSingleContact');
 
 Route::get('/contacts/create', function () {
     return view('create');

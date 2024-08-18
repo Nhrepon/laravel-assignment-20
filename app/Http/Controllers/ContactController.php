@@ -34,12 +34,11 @@ class ContactController extends Controller
         return view('index', ['contact'=> $contacts]);
     } 
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(Request $request)
+    
+    public function viewSingleContact(Request $request)
     {
-        //$contact->create($request->all());
+        $contact = contact::find($request->id);
+        return view('edit', ['contact' => $contact]);
 
 
     }
@@ -79,10 +78,17 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id, contact $contact)
+    public function update(Request $request, string $id)
     {
-        $contact->update($request->all());
-        return redirect()->back();
+        contact::where('id', $id)->update([
+            'name' => $request->name, 
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address
+        ]);
+
+        
+        return redirect(route('contacts.index'));
     }
 
     /**

@@ -51,7 +51,7 @@
                     <td class="border-2 p-4">{{$cts->email}}</td>
                     <td class="border-2 p-4">{{$cts->phone}}</td>
                     <td class="border-2 p-4">{{$cts->address}}</td>
-                    <td class="border-2 p-4 text-blue-600"><a href="{{route('contacts.update', $cts)}}">Update</a>
+                    <td class="border-2 p-4 text-blue-600"><a href="{{route('contacts.viewSingleContact', $cts)}}">View</a>
                     </td>
                     <td class="border-2 p-4 text-red-600">
                         <form method="post" action="{{route('contacts.destroy', $cts)}}">
